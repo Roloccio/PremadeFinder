@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Grupo index{% endblock %}
+
+{% block body %}
+{{ include('./admin/header.html.twig')}}
+    <h1>Lista de Grupos</h1>
+<section id ="listaLibros">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Miembros</th>
+                <th>Acceder</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for grupo in grupos %}
+            <tr>
+                <td>{{ grupo.nombre }}</td>
+                <td>{{grupo.miembros|length}}/5</td>
+                <td>
+                    <a href="{{ path('app_grupo_show', {'id': grupo.id}) }}">Mostrar</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <button>
+    <a href="{{ path('app_grupo_new') }}">Crear Grupo</a>
+    </button>
+    <button>
+    <a href="{{ path('admin') }}">Volver ↩</a>
+    </button>
+    </section>
+    {{ include('./admin/footer.html.twig')}}
+{% endblock %}

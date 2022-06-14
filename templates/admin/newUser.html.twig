@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Crear usuarios{% endblock %}
+
+{% block body %}
+{{ include('./admin/header.html.twig')}}
+
+<section id="userRegister">
+
+    <section class="oneUser">
+        <h2>Dar de alta un usuario</h2>
+        {{ include('user/_form.html.twig') }}
+            <a href="{{ path('admin') }}">Volver ↩</a>
+    </section>
+
+</section>
+
+{{ include('./admin/footer.html.twig')}}
+{% endblock %}

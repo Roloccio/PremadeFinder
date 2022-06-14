@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}¿Quiénes somos?{% endblock %}
+
+{% block body %}
+{{ include('./admin/header.html.twig')}}
+
+<section id="userRegister">
+
+    <section class="oneUser">
+            <div background-color= "black">
+                <h3>¡ Bienvenidos Gamers ! </h3>
+                <p>Premade Finder es una plataforma online que te permitirá disfrutar de la mejor experiencia de juego <br>
+                junto nuevos compañeros con los que podrás vivir la experiencia de un juego competitivo en su máximo exponente
+                podrás encontrar un grupo de usuarios que al igual que tú están cansados de los randoms que sabotean sus partidas
+                competitivas, estamos orientados a dos de los juegos mas relevantes actualmente y que comparten rangos, League of Legends y Valorant
+                dos juegos de la franquicia de Riot Games</p>
+            </div>
+            {# <img height="250" width="250" src = "/img/Lol-1.jpg"> #}
+            <a href="{{ path('admin') }}">Volver ↩</a>
+    </section>
+
+</section>
+
+{{ include('./admin/footer.html.twig')}}
+{% endblock %}

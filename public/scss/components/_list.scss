@@ -1,0 +1,136 @@
+#listaLibros , #userList, .show1, #edit, #commentList, #cursoList {
+    @include mainSection;
+    flex-direction: column;
+    overflow: scroll;
+    text-align: center;
+
+    & h1 {
+        margin:1rem 1rem 2.5rem;
+    }
+    & #form {
+        
+        margin: 0 auto;
+        border: 1px solid $color-black;
+        width: fit-content;
+        box-shadow: 0 0 5px $color-black;
+        & form {
+            margin: 1rem;
+            
+            & #user, #curso {
+                display: flex;
+                flex-direction: column;
+            }
+        }
+    }
+    & div {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    & button {
+        width: 5rem;
+        background-color: white !important;
+        border: 1px solid $color-secondary !important; 
+        position: relative;
+        z-index: 1;
+        overflow: hidden;
+        display: inline-block;   
+        color: $color-secondaryv2;
+        border-radius: 3px;
+        height:3rem;
+
+        & a {
+            color : black;
+            
+            
+        }
+        & a:hover {
+            color: $color-white;
+            text-decoration:none;
+            transition: .2s ease-out;
+        }
+        &:focus{
+            color: $color-secondaryv2;
+            outline: 0;
+            box-shadow: 0 0 0 0.2rem $color-secondary !important;
+        }
+
+        &::before , &::after{
+            content: "";
+            z-index: -1;
+            position: absolute;
+            width: 50%;
+            height: 100%;
+            top: 0;
+            left: -50%;
+            background-color: $color-secondary!important; /* color de fondo hover */
+            transition: all 0.2s ease-out;
+        }
+    }
+    & button:hover{
+        color: white;
+    }
+    & button:hover::after{
+        left: 50%;
+    }
+    & button:hover::before{
+        left: 0;
+    }
+    & table{
+
+        
+        & tr {
+            & td {
+                
+                & a {
+                    color : black;
+                    
+                }
+                & a:hover {
+                    text-decoration:none;
+                    color : $color-secondaryv2;
+                    transition:.2s ease-out;
+                }
+            }
+        }
+        & tr:nth-child(even) {
+            background: $color-secondary;
+            & .eliminarbutton{
+                border: none !important;
+                background-color: $color-secondary!important;
+                color: $color-black !important;
+                
+            }
+            & .eliminarbutton:hover{
+                color: white !important;
+                transition: all 0.2s ease-out !important;
+            }
+
+            & a:hover{
+                color:$color-white;
+            }
+        }
+        & tr:nth-child(odd) {
+            & .eliminarbutton{
+                border: none !important;
+                color: $color-black !important;
+                &::before , &::after{
+                    width: 0%;
+                }
+                
+            }
+            & .eliminarbutton:hover{
+                color: $color-secondary !important;
+                transition: all 0.2s ease-out !important;
+                background-color: white !important;
+            }
+            & .eliminarbutton:hover::after{
+                left: 0%;
+            }
+
+        };
+    }
+
+
+    }
+    

@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit User{% endblock %}
+
+{% block body %}
+{{ include('./admin/header.html.twig')}}
+    <section id = "edit">
+    <h1>Edit User</h1>
+    <div id = "form">
+    {{ include('user/_form.html.twig', {'button_label': 'Update'}) }}
+    </div>
+    <button>
+	<a href="{{ path('user_list') }}">Volver ↩</a>
+	</button>
+    </section>
+    {{ include('./admin/footer.html.twig')}}
+{% endblock %}

@@ -1,0 +1,75 @@
+//FUENTES
+@font-face {
+    font-family: "title";
+    src: url("/font/Caveat-Bold.ttf");
+}
+@font-face {
+    font-family: "body";
+    src: url("/font/Montserrat-Regular.ttf");
+}
+@font-face {
+    font-family: 'Press Start 2P';
+    src: url("/font/PressStart2P-Regular.ttf");
+}
+
+//VARIABLES
+$color-primary:#df250c;
+$color-secondary:#f13906;
+$color-secondaryv2: #f0eae8;
+$bg-color:#0c0c0c83;
+$color-black: #000;
+$color-white:#FFF;
+$color-white-a:rgba(255, 255, 255, 0.8);
+$gradient: linear-gradient(330deg, rgba(36,0,27,1) 0%, $color-primary 20%, $color-secondary 64%, rgb(212, 77, 183) 91%);
+
+$font-normal: 0.9rem;
+$font-little: 0.8rem;
+$font-big:1.1rem;
+
+$font-h1:3rem;
+$font-h1-sm:1.5rem;
+$font-h1-md:1.75rem;
+$font-h1-lg:2.25rem;
+$font-h1-admin:1.8rem;
+$font-h1-admin-md:1.6rem;
+
+$font-h3-sm: 1.5rem;
+
+$font-h4-sm:1rem;
+$font-h4-md:1.25rem;
+$font-h4-lg:1.3rem;
+
+//MIXINS
+@mixin response($var){
+    @if $var == sm{
+        @media (max-width : 576px){
+            @content;
+        }
+    }@else if $var == md{
+        @media (max-width : 768px){
+            @content;
+        }
+    }@else if $var == lg{
+        @media (max-width : 992px){
+            @content;
+        }
+    }@else if $var == xl{
+        @media (min-width : 1400px){
+            @content;
+        }
+    }
+}
+
+@mixin mainSection{
+    display: flex;
+    flex: 1 0 auto;   
+    padding:2.5rem 3.75rem 4rem;
+
+    @include response(lg){
+        padding:2rem 2.25rem 2.5rem;
+    }
+
+    @include response(md){
+        padding:1.5rem 2rem 2.5rem;
+    }
+}

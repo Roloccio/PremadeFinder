@@ -1,0 +1,171 @@
+#userRegister{
+    @include mainSection;
+    margin: 0;
+    flex-wrap: nowrap;
+    text-align: center;
+    background-image: url(../img/fondo2.jpg);
+    background-size: cover;
+    
+    
+
+    & h2{
+        margin:1rem 1rem 2.5rem;
+
+        @include response(md){
+            margin:1rem 0 0;
+        }
+    }
+
+    & .oneUser{    
+        display : flex;
+        flex-direction: column;
+        width: 60%;
+        
+        margin:0 16.5rem 1.5rem;
+        & div {
+            & h3{
+                color: white;
+            }
+            & p {
+                color:white;
+            }
+        }
+        @include response(md){
+            width:100%;
+        }
+        
+        & label{
+            font-weight:bold;
+            margin:0.5rem 0;
+            color:white;
+        }
+        
+        & h1{
+            font-weight:bold;
+            margin:0.5rem 0;
+            color:white;
+        }
+        & h2{
+            font-weight:bold;
+            margin:0.5rem 0;
+            color:white;
+        }
+    }
+
+    // & .moreUsers{    
+    //     display: flex;
+    //     flex-direction: column;
+    //     flex-wrap: wrap;
+
+    //     @include response(md){
+    //         margin-left:-1.25rem;
+    //     }
+        
+    //     & input{
+    //         margin-left: 3rem;
+    //         position: relative;
+    //         z-index: 1;
+    //         overflow: hidden;
+    //         display: inline-block;   
+    //         color: $color-secondaryv2;
+    
+    //         @include response(lg){
+    //             margin-left: 2rem;
+    //         }
+
+    //         @include response(md){
+    //             margin-left: -0.5rem;
+    //         }
+
+    //         &:focus{
+    //             color: $color-secondaryv2;
+    //             outline: 0;
+    //             box-shadow: 0 0 0 0.2rem $color-secondary !important;
+    //         }
+    
+    //         &::before , &::after{
+    //             content: "";
+    //             z-index: -1;
+    //             position: absolute;
+    //             width: 50%;
+    //             height: 100%;
+    //             top: 0;
+    //             left: -50%;
+    //             background-color: $color-secondary!important; /* color de fondo hover */
+    //             transition: all 0.2s ease-out;
+    //         }
+    //     }
+        
+    //     & .btn:hover{
+    //         color: white;
+    //     }
+    //     & .btn:hover::after{
+    //         left: 50%;
+    //     }
+    //     & .btn:hover::before{
+    //         left: 0;
+    //     }
+        
+    //     & label{
+    //         width:100%;
+    //     }
+    // }
+
+    & form{
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        
+       
+        & #user{ 
+          display: flex;
+          flex-direction: column;
+          width:70%;
+          max-width: 1000px;
+          border: 1px solid $color-black;
+          padding: 2rem;
+          box-shadow: 0 0 5px $color-black;
+    
+            & div{
+                display: contents;
+                
+                & label{
+                    font-weight:bold;
+                    margin:0.5rem 0;
+                    color:white;
+                }
+                
+            }
+        }
+
+        & button{
+            margin: 2.5rem 0;
+            color:black;
+
+            @include response(md){
+                margin: 2.5rem 0 1.5rem;
+            }
+        }
+       
+    }
+
+    & a{
+        color: white;
+        text-decoration: none;
+        align-self: flex-end;
+    }
+
+    @include response(md){
+        display: flex;
+        flex-direction: column;
+
+        & .oneUser{
+            border-right: none;
+            border-bottom: 1px solid $color-black;
+        }
+        & form{
+            margin: 2rem 0 1rem;
+        }
+    }
+}

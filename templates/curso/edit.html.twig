@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Curso{% endblock %}
+
+{% block body %}
+{{ include('./admin/header.html.twig')}}
+
+    <h1>Editar Curso</h1>
+<section id = "edit">
+    <div id = "form">
+    {{ include('curso/_form.html.twig', {'button_label': 'Update'}) }}
+    </div>
+
+    <button>
+	<a href="{{ path('curso_list') }}">Volver ↩</a>
+	</button>
+</section>    
+
+{{ include('./admin/footer.html.twig')}}
+{% endblock %}

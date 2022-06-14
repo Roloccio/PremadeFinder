@@ -1,0 +1,25 @@
+#headerAdmin{
+    display:flex;
+        
+    & .navbar{
+        background-image: url(../img/header2.jpg);
+        background-size: cover;
+        background-position: center;
+        // background-color: $color-primary;
+        padding: 1rem 2rem;
+    }
+
+    & #logo{
+        width:4.5rem;
+    }
+    
+    & h1{
+        font-family: 'Press Start 2P', cursive;
+        font-size:$font-h1-admin;
+        color:$color-white;
+
+        @include response(md){
+            font-size:$font-h1-admin-md;
+        }
+    }
+}

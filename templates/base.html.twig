@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Biblioteca HLANZ{% endblock %}</title>
+        <link rel="icon" href="./img/logo.png">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
+        {% block stylesheets %}
+            {{ encore_entry_link_tags('app') }}
+            <link rel="stylesheet" href="/bootstrap/css/bootstrap.css"/>
+            <link rel="stylesheet" href="/css/style.css"/>
+        {% endblock %}
+
+        {% block javascripts %}
+            {{ encore_entry_script_tags('app') }}
+            <script src="/bootstrap/js/libreriaJquery.js"></script>
+            <script src="/bootstrap/js/bootstrap.bundle.min.js"></script>
+            <script src="/js/index.js"></script>
+        {% endblock %}
+    </head>
+    <body>
+        {% block body %}{% endblock %}
+    </body>
+</html>

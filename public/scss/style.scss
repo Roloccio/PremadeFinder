@@ -1,0 +1,112 @@
+@import './components/base';
+
+body{
+    background-color:$bg-color;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    font-family:"body";
+    font-size:$font-normal;
+    min-width: 375px;
+}
+p{
+    margin:0;
+}
+h1{
+    margin:0;
+}
+h4{
+
+    @include response(md){
+        font-size:$font-h4-md;
+    }
+    @include response(sm){
+        font-size: $font-h4-sm;
+    }
+}
+
+.form-group{
+
+    @include response(md){
+        margin-bottom:0.5rem;
+    }
+}
+
+.no-link{
+    cursor:default!important;
+}
+.btn{
+    background-color: white !important;
+    border: 1px solid $color-secondary !important; 
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    display: inline-block;   
+    color: $color-secondaryv2;
+    border-radius:3px;
+
+    &:focus{
+        color: $color-secondaryv2;
+        outline: 0;
+        box-shadow: 0 0 0 0.2rem $color-secondary !important;
+    }
+
+    &::before , &::after{
+        content: "";
+        z-index: -1;
+        position: absolute;
+        width: 50%;
+        height: 100%;
+        top: 0;
+        left: -50%;
+        background-color: $color-secondary!important; /* color de fondo hover */
+        transition: all 0.2s ease-out;
+    }
+}
+
+.btn:hover{
+    color: white;
+    }
+.btn:hover::after{
+    left: 50%;
+    }
+.btn:hover::before{
+    left: 0;
+}
+
+.bold{
+    font-weight:bold;
+}
+
+.italic{
+    font-style: italic;
+}
+
+.underline{
+    text-decoration: underline;
+}
+
+.custom-select{
+    display:inline;
+    font-size:inherit;
+    color:$color-black;
+    width:4rem;
+    border-radius:3px;
+
+    &:focus{
+        border: 1px solid $color-secondary;
+        box-shadow: none;
+    }
+}
+
+@import './components/header';
+@import './components/footer';
+@import './components/adminIndex';
+@import './components/mainIndex';
+@import './components/loginForm';
+@import './components/headerAdmin';
+@import './components/userRegister';
+@import './components/list';
+@import './components/nuevoLibro';
+@import './components/newGrade.scss';
+@import './components/cookies.scss';

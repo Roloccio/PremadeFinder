@@ -1,0 +1,60 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+Lista de usuarios
+{% endblock %}
+
+{% block body %}
+{{ include('./admin/header.html.twig')}}
+
+<section id="userList">
+	<h1>Lista de usuarios</h1>
+	<table class="table">
+		<thead>
+			<tr>
+				<th>Id</th>
+				<th>Nombre</th>
+				<th>DNI</th>
+				<th>Email</th>
+				<th colspan="3">Acciones</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for user in listUsers %}
+				<tr>
+					<td>{{ user.id }}</td>
+					<td>{{ user.username }}</td>
+					<td>{{ user.discord }}</td>
+					<td>{{ user.email }}</td>
+					<td>
+						<a href="{{ path('user_show', {'id': user.id}) }}">Mostrar</a>
+					</td>
+					<td>	
+						<a href="{{ path('user_edit', {'id': user.id}) }}">Editar</a>
+					</td>
+					<td>
+						<form method="post" action="{{ path('user_delete', {'id': user.id}) }}" onsubmit="return confirm('Are you sure you want to delete this item?');">
+							<input type="hidden" name="_token" value="{{ csrf_token('delete' ~ user.id) }}">
+							<button class="eliminarbutton">Eliminar</button>
+						</form>
+
+					</td>
+				</tr>
+			{% else %}
+				<tr>
+					<td colspan="5">Lista vacía</td>
+				</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+	<div>
+	<button>
+    <a href="{{ path('user_new') }}">Registrar usuario</a>
+	</button>
+	<button>
+	<a href="{{ path('admin') }}">Volver ↩</a>
+	</button>
+	</div>
+</section>
+{{ include('./admin/footer.html.twig')}}
+{% endblock %}

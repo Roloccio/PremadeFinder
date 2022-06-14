@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Panel de admin{% endblock %}
+
+{% block body %}
+{{ include('./admin/header.html.twig')}}
+
+<section id ="adminIndex">
+    <nav>
+        <ul class="enlacesAdmin">
+            <a href="{{ path('libro_new') }}"><li>Crear libro</li></a>
+            <a href="{{ path('user_new') }}"><li>Dar de alta usuarios</li></a>
+            <a href="{{ path('curso_new') }}"><li>Crear nuevo curso</li></a>
+            <a href="{{ path('libro_list') }}"><li>Lista de libros</li></a>
+            <a href="{{ path('user_list') }}"><li>Lista de usuarios</li></a>
+            <a href="{{ path('curso_list') }}"><li>Lista de cursos</li></a>
+            <a href="{{ path('admin_comments') }}"><li>Comentarios pendientes</li></a>
+        </ul>
+    </nav>
+</section>
+
+{{ include('./admin/footer.html.twig')}}
+{% endblock %}

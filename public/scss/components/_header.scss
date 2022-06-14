@@ -1,0 +1,84 @@
+header{
+    display:flex;
+
+    & .navbar{
+        background-image: url(../img/header.jpg);
+        background-size: cover;
+        background-position:center;
+        padding: 1rem 2rem;
+
+        @include response(md){
+            padding: 1.5rem 2rem;
+        }
+
+        @include response(sm){
+            padding:1.5rem 1rem;
+        }
+
+        & .navbar-toggler{
+            border-color: rgba(0, 0, 0, 0);
+
+            & .navbar-toggler-icon {
+                background-image: url(../img/menu.svg);
+                
+            }
+        }
+
+        & .navbar-nav{
+            padding:0 1rem;
+            display:flex;
+            justify-content:flex-end;
+            margin:0 0 0 auto;
+
+            & .nav-link{
+                color: $color-white;
+                text-align:end;
+                font-weight:bold;
+                cursor:pointer;
+            }
+        }
+    }
+
+    & h1{
+        font-family: 'title', cursive;
+        font-size:$font-h1;
+        color:$color-white;
+        text-shadow:4px 3px 2px $color-black;
+        letter-spacing:8px;
+        
+        @include response(lg){
+            font-size: $font-h1-lg;
+            letter-spacing:6px;
+        }
+
+        @include response(md){
+            font-size: $font-h1-md;
+            letter-spacing:4px;
+            
+        }
+
+        @include response(sm){
+            font-size: $font-h1-sm; 
+            width:70%;
+            text-shadow:3px 3px 2px $color-black;
+        }
+        
+    }
+
+    & #logo{
+        width:6rem;
+        border-radius:5px;
+
+        @include response(lg){
+            width:5rem;
+        }
+
+        @include response(md){
+            width:4rem;
+        }
+
+        @include response(sm){
+            display:none;
+        }
+    }
+}

@@ -1,0 +1,96 @@
+footer{
+    display:flex;
+    flex: 0 0 auto;
+    color: $color-white;
+    padding: 1.75rem 0;
+    background-color: $color-primary!important;
+    
+    @include response(sm){
+        font-size:$font-little;
+    }
+
+    & section{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+        @include response(md){
+            justify-content: space-around;
+        }
+
+        @include response(sm){
+            display:block;
+        }
+    }
+
+    & .copyright {
+        padding: 10px;
+    }
+
+    & #footer1 {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+
+        & .footer1 {
+            display: inline-block;
+            margin: 0 10px;
+            font-size: 90%;
+        }
+    }
+
+    & #footer2 {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+
+        & .footer2 {
+            margin:0 1.5rem;
+            border-bottom: 1px solid;
+            border-color: $color-white;
+            line-height: 36px;
+        }
+    }
+
+    & img {
+        width: 2rem;
+    }
+
+    & #fonoimg{
+        width: 1.5rem;
+    }
+
+    & a {
+       color: $color-white;
+       
+        &:hover{
+            color:$color-white;
+            text-decoration:none;
+        }
+    }
+
+    & .contacto {
+        text-align: center;
+        width: 48%;
+
+        @include response(md){
+            width:55%;
+        }
+
+        @include response(sm){
+            width:100%;
+        }
+
+        &:nth-child(2){
+
+            @include response(md){
+                width: 40%;
+            }
+
+            @include response(sm){
+                width:50%;
+                margin: 0.25rem auto 0;
+            }
+        }
+    }
+}

@@ -1,0 +1,17 @@
+#cookies {
+    @include mainSection;
+    flex-direction: column;
+    
+    & h2 , & h3 {
+        margin: 2rem 0 1rem;
+    }
+
+    & button{
+        width:6rem;
+        margin:1.75rem 0 0;
+
+        @include response(lg){
+            margin:1.25rem 0 0;
+        }
+    }
+}

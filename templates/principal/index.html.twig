@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Premade Finder{% endblock %}
+
+{% block body %}
+{{ include('./admin/header.html.twig')}}
+
+<section id ="adminIndex">
+    <nav>
+        <ul class="enlacesAdmin">
+        {% if app.user %}
+            <a href="{{ path('user_edit', {'id': app.user.id}) }}"><li>Especifíca tu rango</li></a>
+            <a href = "/admin/info">¿Quiénes somos?</a>
+            <a href="/grupo"><li>Buscador de grupos</li></a>
+            {% else %}
+            <a href="{{ path('user_new') }}"><li>Registrese en nuestra plataforma</li></a>
+            <a href="/login"><li>Login</li></a>
+            <a href = "/admin/info">¿Quiénes somos?</a>
+        {% endif %}
+        </ul>
+    </nav>
+</section>
+
+{{ include('./admin/footer.html.twig')}}
+{% endblock %}

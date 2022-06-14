@@ -1,0 +1,144 @@
+.mainIndex{
+    @include mainSection;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+
+    @include response(md){
+        display:block;
+    }
+
+    & h4{
+        font-size:$font-h4-lg;
+    }
+
+    & form {
+        width: 20%;
+        margin: 0 3rem 0 0;
+
+        @include response(lg){
+            width:22%;
+            margin: 0 2rem 0 0;
+        }
+
+        @include response(md){
+            width:60%;
+            margin:0 auto 2rem;
+        }
+
+        @include response(sm){
+            width:90%;
+        }
+    }
+
+    & .librosYbuscador{
+        width: inherit;
+
+        @include response(md){
+            margin:0 auto;
+        }
+
+        & a{
+            color: $color-black;
+            text-decoration: none;
+        }
+
+        & .formBuscador{
+            display:flex;
+            justify-content:center;
+            width: 100%;
+            margin:0 0 2rem;
+
+            @include response(lg){
+                width:100%;
+            }
+
+            & #inputBuscador{
+                width:20rem;
+
+                @include response(lg){
+                    width:15rem;
+                }
+
+                @include response(sm){
+                    width:11rem;
+                }
+            }
+
+            & #btnBuscar{
+                padding:0.3rem; 
+            }
+        }
+
+        & .librosConLoguin{
+            display:grid;
+            grid-template-columns:repeat(3, 1fr);
+            grid-auto-rows:8rem;
+            grid-gap:1rem;
+    
+            @include response(xl){
+                grid-template-columns:repeat(4, 1fr);
+            }
+
+            @include response(md){
+                grid-template-columns:repeat(2, 1fr);
+            }
+    
+            @include response(sm){
+                grid-template-columns:1fr;
+                grid-gap:0.75rem;
+            }
+    
+            & .libroConLoguin{
+                padding:1rem;
+                border-radius: 5px;
+                border: 2px solid $color-secondary;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                height:100%;
+    
+                @include response(lg){
+                    padding: 0.5rem 0.75rem;
+                }
+    
+                &:hover{
+                    transform:scale(1.1);
+                    transition:.1s ease-out;
+                }
+            }
+        }
+
+        & .librosSinLogin{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+
+            & .libroSinLoguin{
+                width: 16rem;
+                height:8rem;
+                margin: 0 1rem 1rem 0;
+                padding:1rem;
+                border-radius: 5px;
+                border: 2px solid $color-secondary;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+    
+                @include response(lg){
+                    padding: 0.5rem 0.75rem;
+                }
+    
+                &:hover{
+                    transform:scale(1.1);
+                    transition:.1s ease-out;
+                }
+            }
+        }
+
+        
+    }
+    
+}
