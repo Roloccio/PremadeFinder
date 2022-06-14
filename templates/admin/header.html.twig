@@ -9,9 +9,13 @@
 		<div class="collapse navbar-collapse" id="navbarNav">
 		<ul class="navbar-nav">
 			<li class="nav-item">
-				<a id="logoutLink" class="nav-link">¡Prepárate para formar equipo!</a>
+				
 				{% if app.user %}
-				<a id="logoutLink" class="nav-link" href="/logout">Cerrar sesión</a>
+				<a id="logoutLink" class="nav-link">Bienvenido {{ app.user.username }}</a>
+					<a id="logoutLink" class="nav-link" href="/logout">Cerrar sesión</a>
+					
+				{% else %}
+					<a id="logoutLink" class="nav-link">¡Prepárate para formar equipo!</a>
 				{% endif %}
 			</li>
 		</ul>
