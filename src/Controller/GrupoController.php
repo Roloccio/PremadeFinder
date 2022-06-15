@@ -38,7 +38,9 @@ class GrupoController extends AbstractController
             $entityManager->persist($grupo);
             $entityManager->flush();
 
-            return $this->redirectToRoute('app_grupo_show', [], Response::HTTP_SEE_OTHER);
+            return $this->render('grupo/show.html.twig', [
+                'grupo' => $grupo,
+            ]);
         
     }
 
