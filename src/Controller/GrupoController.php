@@ -104,10 +104,10 @@ class GrupoController extends AbstractController
     public function delete2(Grupo $grupo,EntityManagerInterface $entityManager,Request $request,User $user, GrupoRepository $grupoRepository): Response
     {
             
-        $grupoRepository->remove($grupo);
+        $grupoRepository->remove($grupo,true);
 
-        $entityManager->persist($grupo);
-        $entityManager->flush();
+        // $entityManager->persist($grupo);
+        // $entityManager->flush();
 
         return $this->redirectToRoute('app_grupo_index', [], Response::HTTP_SEE_OTHER);
     }
