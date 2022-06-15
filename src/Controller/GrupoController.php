@@ -89,9 +89,8 @@ class GrupoController extends AbstractController
     public function delete(Grupo $grupo,EntityManagerInterface $entityManager,Request $request,User $user, GrupoRepository $grupoRepository): Response
     {
         $grupo->removeMiembro($this->getUser());
-        if (count($grupo->getMiembros() == 0)){
-            $grupoRepository->remove($grupo);
-        }
+            
+        
 
         $entityManager->persist($grupo);
         $entityManager->flush();
