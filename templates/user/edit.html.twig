@@ -5,9 +5,9 @@
 {% block body %}
 {{ include('./admin/header.html.twig')}}
     <section id = "edit">
-    <h1>Selecciona Tu Rango! <img src="/img/ranks.jpg"/></h1>
+    <h1>Selecciona Tu Rango!<br> <img src="/img/ranks.jpg"/></h1>
     <div id = "form">
-    {{ include('user/_form.html.twig', {'button_label': 'Update'}) }}
+    {{ include('user/_form.html.twig', {'button_label': 'Elegir'}) }}
     </div>
     <button>
 	<a href="{{ path('main') }}">Volver ↩</a>

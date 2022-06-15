@@ -10,10 +10,15 @@
   font-family: "Press Start 2P";
   src: url("/font/PressStart2P-Regular.ttf");
 }
-#edit2 {
-  background-image: url(../img/ranks.jpg);
-  background: size 80px;
-  background-position: center;
+#edit {
+  background-color: #0a071c;
+}
+#edit form {
+  color: white;
+  padding: 2rem;
+}
+#edit form .btn {
+  color: black;
 }
 
 body {
@@ -713,7 +718,7 @@ form .btn {
   flex: 1 0 auto;
   padding: 2.5rem 3.75rem 4rem;
   flex-direction: column;
-  overflow: scroll;
+  overflow: hidden;
   text-align: center;
 }
 @media (max-width: 992px) {
