@@ -10,6 +10,12 @@
   font-family: "Press Start 2P";
   src: url("/font/PressStart2P-Regular.ttf");
 }
+#edit2 {
+  background-image: url(../img/ranks.jpg);
+  background: size 80px;
+  background-position: center;
+}
+
 body {
   background-color: #0c0c0c83;
   display: flex;

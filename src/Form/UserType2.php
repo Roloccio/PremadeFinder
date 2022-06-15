@@ -31,6 +31,9 @@ class UserType2 extends AbstractType
             'Oro' => 'Oro',
             'Platino' => 'Platino',
             'Diamante' => 'Diamante',
+            'Master' => 'Master',
+            'GrandMaster' => 'GrandMaster',
+            'Challenger' => 'Challenger',
         ],
         ])
         // ->add('discord')

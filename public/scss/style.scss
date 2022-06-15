@@ -1,5 +1,9 @@
 @import './components/base';
-
+#edit2{
+    background-image: url(../img/ranks.jpg);
+    background: size 80px;;
+    background-position: center;
+}
 body{
     background-color:$bg-color;
     display: flex;
