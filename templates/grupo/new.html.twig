@@ -3,9 +3,15 @@
 {% block title %}New Grupo{% endblock %}
 
 {% block body %}
-    <h1>Create new Grupo</h1>
-
+{{ include('./admin/header.html.twig')}}
+<section id = "edit">
+    <h1>Crear Nuevo Grupo</h1>
+    <div id="form">
     {{ include('grupo/_form.html.twig') }}
-
-    <a href="{{ path('app_grupo_index') }}">back to list</a>
+    </div>
+    <button>
+    <a href="{{ path('app_grupo_index') }}">Volver al listado</a>
+    </button>
+    </section>
+        {{ include('./admin/footer.html.twig')}}
 {% endblock %}
