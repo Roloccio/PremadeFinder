@@ -722,6 +722,9 @@ form .btn {
 }
 #listaLibros h1, #userList h1, .show1 h1, #edit h1, #commentList h1, #cursoList h1 {
   margin: 1rem 1rem 2.5rem;
+  font-family: "Press Start 2P", cursive;
+  font-size: 1.8rem;
+  color: #FFF;
 }
 #listaLibros #form, #userList #form, .show1 #form, #edit #form, #commentList #form, #cursoList #form {
   margin: 0 auto;
@@ -787,6 +790,10 @@ form .btn {
 #listaLibros button:hover::before, #userList button:hover::before, .show1 button:hover::before, #edit button:hover::before, #commentList button:hover::before, #cursoList button:hover::before {
   left: 0;
 }
+#listaLibros table tr td, #userList table tr td, .show1 table tr td, #edit table tr td, #commentList table tr td, #cursoList table tr td {
+  font-family: "Press Start 2P", cursive;
+  color: #FFF;
+}
 #listaLibros table tr td a, #userList table tr td a, .show1 table tr td a, #edit table tr td a, #commentList table tr td a, #cursoList table tr td a {
   color: black;
 }
@@ -794,6 +801,10 @@ form .btn {
   text-decoration: none;
   color: #f0eae8;
   transition: 0.2s ease-out;
+}
+#listaLibros table tr th, #userList table tr th, .show1 table tr th, #edit table tr th, #commentList table tr th, #cursoList table tr th {
+  font-family: "Press Start 2P", cursive;
+  color: #FFF;
 }
 #listaLibros table tr:nth-child(even), #userList table tr:nth-child(even), .show1 table tr:nth-child(even), #edit table tr:nth-child(even), #commentList table tr:nth-child(even), #cursoList table tr:nth-child(even) {
   background: #f13906;
