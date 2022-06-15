@@ -22,6 +22,13 @@ class GrupoController extends AbstractController
             'grupos' => $grupoRepository->findAll(),
         ]);
     }
+    #[Route('/', name: 'app_grupo_show', methods: ['GET'])]
+    public function index2(GrupoRepository $grupoRepository): Response
+    {
+        return $this->render('grupo/show.html.twig', [
+            'grupos' => $grupoRepository->findAll(),
+        ]);
+    }
     #[Route('/{grupo}/unirse', name: 'unirse', methods: ['GET'])]
     public function unirse(Grupo $grupo,EntityManagerInterface $entityManager): Response
     {
@@ -31,7 +38,7 @@ class GrupoController extends AbstractController
             $entityManager->persist($grupo);
             $entityManager->flush();
 
-            return $this->redirectToRoute('app_grupo_index', [], Response::HTTP_SEE_OTHER);
+            return $this->redirectToRoute('app_grupo_show', [], Response::HTTP_SEE_OTHER);
         
     }
 
