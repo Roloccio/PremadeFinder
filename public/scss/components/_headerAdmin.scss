@@ -27,8 +27,7 @@
     display:flex;
         
     & .navbar{
-        background-size: cover;
-        background-position: center;
+        background-image: url(../img/);
         background-color: $color-primary;
         padding: 1rem 2rem;
     }
