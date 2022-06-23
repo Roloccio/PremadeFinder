@@ -40,7 +40,9 @@
     <a href = "/grupo/{{ grupo.id }}/unirse">Unirse</a>
     </button>
     {% endif %}
-        {{ include('grupo/_delete_form.html.twig') }}
+        <button>
+            <a href = "/grupo/{{ grupo.id }}/leave">Salir</a>
+        </button>
     </div>
 </section>
     

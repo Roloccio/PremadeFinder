@@ -94,9 +94,11 @@ class GrupoController extends AbstractController
         ]);
     }
 
-    #[Route('/{id}', name: 'app_grupo_delete', methods: ['POST'])]
-    public function delete(Grupo $grupo,EntityManagerInterface $entityManager,Request $request,User $user, GrupoRepository $grupoRepository): Response
+    #[Route('/{id}/leave', name: 'app_grupo_delete', methods: ['GET','POST'])]
+    public function delete(Grupo $grupo,EntityManagerInterface $entityManager,Request $request, GrupoRepository $grupoRepository): Response
     {
+        // User $user,
+
         $grupo->removeMiembro($this->getUser());
         
             if (count($grupo->getMiembros()) <=0 ) {
