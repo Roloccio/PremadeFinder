@@ -98,11 +98,18 @@ class GrupoController extends AbstractController
     public function delete(Grupo $grupo,EntityManagerInterface $entityManager,Request $request,User $user, GrupoRepository $grupoRepository): Response
     {
         $grupo->removeMiembro($this->getUser());
-            
+        
+            if (count($grupo->getMiembros()) <=0 ) {
+                $entityManager->remove($grupo);
+                $entityManager->flush();
+            }
+            else{
+                $entityManager->persist($grupo);
+                $entityManager->flush();
+            }
         
 
-        $entityManager->persist($grupo);
-        $entityManager->flush();
+        
         // if ($this->isCsrfTokenValid('delete'.$grupo->getId(), $request->request->get('_token'))) {
         //     $grupoRepository->remove($grupo, true);
         // }
@@ -113,7 +120,7 @@ class GrupoController extends AbstractController
     public function delete2(Grupo $grupo,EntityManagerInterface $entityManager,Request $request,User $user, GrupoRepository $grupoRepository): Response
     {
             
-        $grupoRepository->remove($grupo,true);
+        $grupoRepository->remove($grupo);
 
         // $entityManager->persist($grupo);
         // $entityManager->flush();
