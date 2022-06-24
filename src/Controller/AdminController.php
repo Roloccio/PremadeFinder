@@ -18,6 +18,27 @@ class AdminController extends AbstractController
             'controller_name' => 'AdminController',
         ]);
     }
+    #[Route('/admin/rangos', name: 'rangos')]
+    public function rangos(): Response
+    {
+        return $this->render('principal/rangos.html.twig', [
+            'controller_name' => 'AdminController',
+        ]);
+    }
+    #[Route('/gestion', name: 'gestion')]
+    public function gestion(): Response
+    {
+        return $this->render('admin/index.html.twig', [
+            'controller_name' => 'AdminController',
+        ]);
+    }
+    #[Route('/admin/grupos', name: 'grupos', methods: ['GET'])]
+    public function grupos(): Response
+    {
+        return $this->render('principal/grupos.html.twig', [
+            'controller_name' => 'AdminController',
+        ]);
+    }
     #[Route('/admin/comments', name: 'admin_comments')]
     public function commentList(ComentarioRepository $commentRepository): Response
     {

@@ -17,13 +17,15 @@
         </thead>
         <tbody>
         {% for grupo in grupos %}
+            {% if grupo.juego == "Valorant" %}
             <tr>
                 <td>{{ grupo.nombre }}</td>
                 <td>{{grupo.miembros|length}}/5</td>
                 <td>
-                    <a href="{{ path('app_grupo_show', {'id': grupo.id}) }}">Mostrar</a>
+                    <a href="{{ path('app_grupo_show2', {'id': grupo.id}) }}">Mostrar</a>
                 </td>
             </tr>
+            {% endif %}
         {% else %}
             <tr>
                 <td colspan="3">no records found</td>
@@ -36,7 +38,7 @@
     </button>
     <br>
     <button>
-    <a href="{{ path('admin') }}">Volver ↩</a>
+    <a href="{{ path('grupos') }}">Volver ↩</a>
     </button>
     </section>
     {{ include('./admin/footer.html.twig')}}

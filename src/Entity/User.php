@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\UserRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
@@ -40,6 +42,24 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
 
     #[ORM\OneToOne(mappedBy: 'autor', targetEntity: Grupo::class, cascade: ['persist', 'remove'])]
     private $creador;
+
+    #[ORM\Column(type: 'boolean', nullable: true)]
+    private $Baneado;
+
+    #[ORM\Column(type: 'string', length: 255, nullable: true)]
+    private $rangoValorant;
+
+    #[ORM\OneToMany(mappedBy: 'Autor', targetEntity: Reporte::class)]
+    private $reportes;
+
+    #[ORM\OneToMany(mappedBy: 'Reportado', targetEntity: Reporte::class)]
+    private $reportedIn;
+
+    public function __construct()
+    {
+        $this->reportes = new ArrayCollection();
+        $this->reportedIn = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -177,6 +197,90 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         }
 
         $this->creador = $creador;
+
+        return $this;
+    }
+
+    public function isBaneado(): ?bool
+    {
+        return $this->Baneado;
+    }
+
+    public function setBaneado(?bool $Baneado): self
+    {
+        $this->Baneado = $Baneado;
+
+        return $this;
+    }
+
+    public function getRangoValorant(): ?string
+    {
+        return $this->rangoValorant;
+    }
+
+    public function setRangoValorant(?string $rangoValorant): self
+    {
+        $this->rangoValorant = $rangoValorant;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Reporte>
+     */
+    public function getReportes(): Collection
+    {
+        return $this->reportes;
+    }
+
+    public function addReporte(Reporte $reporte): self
+    {
+        if (!$this->reportes->contains($reporte)) {
+            $this->reportes[] = $reporte;
+            $reporte->setAutor($this);
+        }
+
+        return $this;
+    }
+
+    public function removeReporte(Reporte $reporte): self
+    {
+        if ($this->reportes->removeElement($reporte)) {
+            // set the owning side to null (unless already changed)
+            if ($reporte->getAutor() === $this) {
+                $reporte->setAutor(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Reporte>
+     */
+    public function getReportedIn(): Collection
+    {
+        return $this->reportedIn;
+    }
+
+    public function addReportedIn(Reporte $reportedIn): self
+    {
+        if (!$this->reportedIn->contains($reportedIn)) {
+            $this->reportedIn[] = $reportedIn;
+            $reportedIn->setReportado($this);
+        }
+
+        return $this;
+    }
+
+    public function removeReportedIn(Reporte $reportedIn): self
+    {
+        if ($this->reportedIn->removeElement($reportedIn)) {
+            // set the owning side to null (unless already changed)
+            if ($reportedIn->getReportado() === $this) {
+                $reportedIn->setReportado(null);
+            }
+        }
 
         return $this;
     }

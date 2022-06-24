@@ -18,7 +18,14 @@ class GrupoController extends AbstractController
     #[Route('/', name: 'app_grupo_index', methods: ['GET'])]
     public function index(GrupoRepository $grupoRepository): Response
     {
-        return $this->render('grupo/index.html.twig', [
+        return $this->render('grupo/indexlol.html.twig', [
+            'grupos' => $grupoRepository->findAll(),
+        ]);
+    }
+    #[Route('/grupo2', name: 'app_grupo_index2', methods: ['GET'])]
+    public function grupo2(GrupoRepository $grupoRepository): Response
+    {
+        return $this->render('grupo/indexvalorant.html.twig', [
             'grupos' => $grupoRepository->findAll(),
         ]);
     }
@@ -59,7 +66,7 @@ class GrupoController extends AbstractController
             $entityManager->persist($grupo);
             $entityManager->flush();
 
-            return $this->redirectToRoute('app_grupo_index', [], Response::HTTP_SEE_OTHER);
+            return $this->redirectToRoute('grupos', [], Response::HTTP_SEE_OTHER);
         }
 
         return $this->renderForm('grupo/new.html.twig', [
@@ -72,6 +79,13 @@ class GrupoController extends AbstractController
     public function show(Grupo $grupo): Response
     {
         return $this->render('grupo/show.html.twig', [
+            'grupo' => $grupo,
+        ]);
+    }
+    #[Route('show/{id}', name: 'app_grupo_show2', methods: ['GET'])]
+    public function show2(Grupo $grupo): Response
+    {
+        return $this->render('grupo/show2.html.twig', [
             'grupo' => $grupo,
         ]);
     }
@@ -117,7 +131,7 @@ class GrupoController extends AbstractController
         //     $grupoRepository->remove($grupo, true);
         // }
 
-        return $this->redirectToRoute('app_grupo_index', [], Response::HTTP_SEE_OTHER);
+        return $this->redirectToRoute('grupos', [], Response::HTTP_SEE_OTHER);
     }
     #[Route('/{id}', name: 'app_grupo_delete2', methods: ['POST'])]
     public function delete2(Grupo $grupo,EntityManagerInterface $entityManager,Request $request,User $user, GrupoRepository $grupoRepository): Response
@@ -130,4 +144,6 @@ class GrupoController extends AbstractController
 
         return $this->redirectToRoute('app_grupo_index', [], Response::HTTP_SEE_OTHER);
     }
+
+
 }

@@ -9,13 +9,8 @@
     <nav>
         <ul class="enlacesAdmin">
         {% if app.user %}
-            {% if app.user.baneado %}
-                Estas baneado
-            {% else %}
-            <a href="{{ path('rangos', {'id': app.user.id}) }}"><li>Especifíca tu rango</li></a>
-            <a href = "/admin/info">¿Quiénes somos?</a>
-            <a href="{{ path('grupos', {'id': app.user.id}) }}"><li>Buscador de grupos</li></a>
-            {% endif %}
+            <a href="{{ path('app_grupo_index', {'id': app.user.id}) }}"><li>Grupos League Of Leguends</li></a>
+            <a href="{{ path('app_grupo_index2', {'id': app.user.id}) }}"><li>Grupos Valorant</li></a>
             {% else %}
             <a href="{{ path('user_new') }}"><li>Registrese en nuestra plataforma</li></a>
             <a href="/login"><li>Login</li></a>

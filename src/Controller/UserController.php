@@ -6,6 +6,7 @@ use App\Entity\User;
 use App\Entity\Curso;
 use App\Form\UserType;
 use App\Form\UserType2;
+use App\Form\UserType3;
 use App\Form\UsersType;
 use App\Repository\UserRepository;
 // use App\Repository\CursoRepository;
@@ -27,7 +28,26 @@ class UserController extends AbstractController
             'listUsers' => $userRepository->findAll(),
         ]);
     }
-    
+    #[Route('/{id}/ban', name: 'user_ban', methods: ['GET'])]
+    public function ban(EntityManagerInterface $entityManager, User $user): Response
+    {
+
+        $user->setBaneado(true);
+        $entityManager->persist($user);
+        $entityManager->flush();
+
+        return $this->redirectToRoute('user_list', [], Response::HTTP_SEE_OTHER);
+    }
+    #[Route('/{id}/unban', name: 'user_unban', methods: ['GET'])]
+    public function unban(EntityManagerInterface $entityManager, User $user): Response
+    {
+
+        $user->setBaneado(false);
+        $entityManager->persist($user);
+        $entityManager->flush();
+
+        return $this->redirectToRoute('user_list', [], Response::HTTP_SEE_OTHER);
+    }
     #[Route('/new', name: 'user_new', methods: ['GET', 'POST'])]
     public function new(Request $request, EntityManagerInterface $entityManager, SluggerInterface $slugger, UserPasswordHasherInterface $userPasswordHasher, UserRepository $userRepository): Response
     {
@@ -178,6 +198,23 @@ class UserController extends AbstractController
     public function edit(Request $request, User $user, EntityManagerInterface $entityManager): Response
     {
         $form = $this->createForm(UserType2::class, $user);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $entityManager->flush();
+
+            return $this->redirectToRoute('admin');
+        }
+
+        return $this->renderForm('user/edit.html.twig', [
+            'user' => $user,
+            'form' => $form,
+        ]);
+    }
+    #[Route('/{id}/edit2', name: 'user_edit2', methods: ['GET', 'POST'])]
+    public function edit2(Request $request, User $user, EntityManagerInterface $entityManager): Response
+    {
+        $form = $this->createForm(UserType3::class, $user);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {

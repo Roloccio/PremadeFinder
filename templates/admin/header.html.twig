@@ -13,6 +13,9 @@
 				{% if app.user %}
 				<a id="logoutLink" class="nav-link">Bienvenido {{ app.user.username }}</a>
 					<a id="logoutLink" class="nav-link" href="/logout">Cerrar sesión</a>
+					{% if is_granted('ROLE_ADMIN') %}
+						<a id="logoutLink" class="nav-link" href="/gestion">Panel de administración</a>
+					{% endif %}
 					
 				{% else %}
 					<a id="logoutLink" class="nav-link">¡Prepárate para formar equipo!</a>

@@ -21,8 +21,11 @@ class Grupo
     #[ORM\OneToMany(mappedBy: 'grupo', targetEntity: User::class)]
     private $miembros;
 
-    #[ORM\OneToOne(inversedBy: 'creador', targetEntity: User::class, cascade: ['persist', 'remove'])]
+    #[ORM\OneToOne( inversedBy: 'creador', targetEntity: User::class, cascade: ['persist', 'remove'])]
     private $autor;
+
+    #[ORM\Column(type: 'string', length: 255, nullable: true)]
+    private $juego;
 
     public function __construct()
     {
@@ -84,6 +87,18 @@ class Grupo
     public function setAutor(?User $autor): self
     {
         $this->autor = $autor;
+
+        return $this;
+    }
+
+    public function getJuego(): ?string
+    {
+        return $this->juego;
+    }
+
+    public function setJuego(?string $juego): self
+    {
+        $this->juego = $juego;
 
         return $this;
     }

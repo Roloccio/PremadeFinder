@@ -2,30 +2,26 @@
 
 namespace App\Form;
 
-use App\Entity\Grupo;
+use App\Entity\Reporte;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
-use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
-class GrupoType extends AbstractType
+
+class ReporteType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('nombre')
-            ->add('juego', ChoiceType::class, [
-            'choices'  => [
-                'Lol' => 'Lol',
-                'Valorant' => 'Valorant',
-            ],
-        ])
+            ->add('Descripcion')
+            // ->add('Autor')
+            // ->add('Reportado')
         ;
     }
 
     public function configureOptions(OptionsResolver $resolver): void
     {
         $resolver->setDefaults([
-            'data_class' => Grupo::class,
+            'data_class' => Reporte::class,
         ]);
     }
 }
