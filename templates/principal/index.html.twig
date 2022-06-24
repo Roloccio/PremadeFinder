@@ -10,8 +10,16 @@
         <ul class="enlacesAdmin">
         {% if app.user %}
             {% if app.user.baneado %}
-                Estas baneado
+                <div id = "baneadoDiv">
+                <h1> Has sido Baneado </h1>
+                <p>No podrás acceder a ninguna función de la página. <br>
+                Si tiene alguna queja o no está de acuerdo con la decisión póngase en contacto con el administrador 
+                mediante el teléfono de contacto abajo.</p>
+                <img width = "150px" src="/img/precaucion.png"/>
+                </div>
+
             {% else %}
+            
             <a href="{{ path('rangos', {'id': app.user.id}) }}"><li>Especifíca tu rango</li></a>
             <a href = "/admin/info">¿Quiénes somos?</a>
             <a href="{{ path('grupos', {'id': app.user.id}) }}"><li>Buscador de grupos</li></a>

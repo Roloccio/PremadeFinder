@@ -1,6 +1,25 @@
 #adminIndex{
     @include mainSection;
 
+    & #baneadoDiv{
+        border:1px solid black;
+        border-radius: 5px;
+        background-color: white;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        width: 550px;
+        height: 300px;
+        margin-left: 425px;
+        & p {
+            color: black;
+            width: 500px;
+        }
+        & h1 {
+            color: red;
+        }
+    }
     & nav{
         width:100%;
         display:flex;
@@ -24,7 +43,8 @@
             @include response(sm){
                 grid-template-columns: repeat(2, 1fr);
             }
-                
+            
+            
             & a{
                 display:flex;
                 border:2px solid $color-secondary;

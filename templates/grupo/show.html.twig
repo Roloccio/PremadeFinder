@@ -4,7 +4,6 @@
 
 {% block body %}
 {{ include('./admin/header.html.twig')}}
-    <h1>Grupo</h1>
 <section id = "listaLibros">
     <table class="table">
         <tbody>
@@ -13,6 +12,7 @@
                 <td>Username</td>
                 <td>Discord</td>
                 <td>Rango</td>
+                <td>Acciones</td>
             </tr>
             {% for miembro in grupo.miembros %}
             {% if miembro.username == app.user.username %}
@@ -46,9 +46,7 @@
                     {{miembro.rango}}
                 </td>
                 <td>
-                    <button>
-                        <a href="/reporte/{{miembro.id}}/new">Reportar jugador</a>
-                    </button>
+                        <a href="/reporte/{{miembro.id}}/new">Reportar</a>
                 </td>
             </tr>
             {% endif %}

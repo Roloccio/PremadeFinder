@@ -28,6 +28,13 @@ class UserController extends AbstractController
             'listUsers' => $userRepository->findAll(),
         ]);
     }
+    #[Route('/banned', name: 'user_list2', methods: ['GET'])]
+    public function baneados(UserRepository $userRepository): Response
+    {
+        return $this->render('admin/userList2.html.twig', [
+            'listUsers' => $userRepository->findAll(),
+        ]);
+    }
     #[Route('/{id}/ban', name: 'user_ban', methods: ['GET'])]
     public function ban(EntityManagerInterface $entityManager, User $user): Response
     {
@@ -223,7 +230,7 @@ class UserController extends AbstractController
             return $this->redirectToRoute('admin');
         }
 
-        return $this->renderForm('user/edit.html.twig', [
+        return $this->renderForm('user/edit2.html.twig', [
             'user' => $user,
             'form' => $form,
         ]);

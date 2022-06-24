@@ -3,27 +3,29 @@
 {% block title %}Reporte index{% endblock %}
 
 {% block body %}
-    <h1>Reporte index</h1>
+{{ include('./admin/adminheader.html.twig')}}
 
+
+    <section id="userList">
+        <h1>Lista de reportes</h1>
     <table class="table">
         <thead>
             <tr>
                 <th>Id</th>
-                <th>Descripcion</th>
-                <th>actions</th>
+                <th>Autor</th>
+                <th>Reportado</th>
+                <th>Acciones</th>
             </tr>
         </thead>
         <tbody>
         {% for reporte in reportes %}
             <tr>
                 <td>{{ reporte.id }}</td>
-                <td>{{ reporte.Descripcion }}</td>
                 <td>{{ reporte.autor.username }}</td>
                 <td>{{ reporte.reportado.username }}</td>
                 <td>
-                    <a href="{{ path('app_reporte_show', {'id': reporte.id}) }}">show</a>
-                    <a href="{{ path('app_reporte_edit', {'id': reporte.id}) }}">edit</a>
-                </td>
+                    <a href="{{ path('app_reporte_show', {'id': reporte.id}) }}">Mostrar</a>
+                    </td>
             </tr>
         {% else %}
             <tr>
@@ -32,6 +34,10 @@
         {% endfor %}
         </tbody>
     </table>
-
+    <button>
+	<a href="{{ path('gestion') }}">Volver ↩</a>
+	</button>
+    </section>
+    {{ include('./admin/footer.html.twig')}}
     {# <a href="{{ path('app_reporte_new', {'id': reporte.id}) }}">Create new</a> #}
 {% endblock %}

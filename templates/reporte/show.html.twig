@@ -3,24 +3,33 @@
 {% block title %}Reporte{% endblock %}
 
 {% block body %}
+{{ include('./admin/adminheader.html.twig')}}
+
+
+    <section id="userList">
     <h1>Reporte</h1>
 
     <table class="table">
         <tbody>
             <tr>
-                <th>Id</th>
-                <td>{{ reporte.id }}</td>
-            </tr>
-            <tr>
                 <th>Descripcion</th>
                 <td>{{ reporte.Descripcion }}</td>
             </tr>
+            <tr>
+                <th>Autor</th>
+                <td>{{ reporte.autor.username }}</td>
+            </tr>
+            <tr>
+                <th>Reportado</th>
+                <td>{{ reporte.reportado.username }}</td>
+            </tr>
         </tbody>
     </table>
-
-    <a href="{{ path('app_reporte_index') }}">back to list</a>
-
-    <a href="{{ path('app_reporte_edit', {'id': reporte.id}) }}">edit</a>
+    <button>
+    <a href="{{ path('app_reporte_index') }}">Volver al listado</a>
+    </button>
 
     {{ include('reporte/_delete_form.html.twig') }}
+    </section>
+    {{ include('./admin/footer.html.twig')}}
 {% endblock %}

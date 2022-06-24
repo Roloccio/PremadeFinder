@@ -312,6 +312,25 @@ footer .contacto {
     padding: 1.5rem 2rem 2.5rem;
   }
 }
+#adminIndex #baneadoDiv {
+  border: 1px solid black;
+  border-radius: 5px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  width: 550px;
+  height: 300px;
+  margin-left: 425px;
+}
+#adminIndex #baneadoDiv p {
+  color: black;
+  width: 500px;
+}
+#adminIndex #baneadoDiv h1 {
+  color: red;
+}
 #adminIndex nav {
   width: 100%;
   display: flex;
@@ -602,6 +621,27 @@ form .btn {
   }
 }
 
+#headerAdmin2 {
+  display: flex;
+}
+#headerAdmin2 .navbar {
+  background-image: url(../img/);
+  background-color: #df250c;
+  padding: 1rem 2rem;
+}
+#headerAdmin2 #logo {
+  width: 4.5rem;
+}
+#headerAdmin2 h1 {
+  font-size: 1.8rem;
+  color: #FFF;
+}
+@media (max-width: 768px) {
+  #headerAdmin2 h1 {
+    font-size: 1.6rem;
+  }
+}
+
 #userRegister {
   display: flex;
   flex: 1 0 auto;
@@ -713,7 +753,7 @@ form .btn {
   }
 }
 
-#listaLibros, #userList, .show1, #edit, #commentList, #cursoList {
+#listaLibros, .show1, #edit, #commentList, #cursoList {
   display: flex;
   flex: 1 0 auto;
   padding: 2.5rem 3.75rem 4rem;
@@ -722,40 +762,57 @@ form .btn {
   text-align: center;
 }
 @media (max-width: 992px) {
-  #listaLibros, #userList, .show1, #edit, #commentList, #cursoList {
+  #listaLibros, .show1, #edit, #commentList, #cursoList {
     padding: 2rem 2.25rem 2.5rem;
   }
 }
 @media (max-width: 768px) {
-  #listaLibros, #userList, .show1, #edit, #commentList, #cursoList {
+  #listaLibros, .show1, #edit, #commentList, #cursoList {
     padding: 1.5rem 2rem 2.5rem;
   }
 }
-#listaLibros h1, #userList h1, .show1 h1, #edit h1, #commentList h1, #cursoList h1 {
+#listaLibros h1, .show1 h1, #edit h1, #commentList h1, #cursoList h1 {
   margin: 1rem 1rem 2.5rem;
   font-family: "Press Start 2P", cursive;
   font-size: 1.8rem;
   color: #FFF;
 }
-#listaLibros #form, #userList #form, .show1 #form, #edit #form, #commentList #form, #cursoList #form {
+#listaLibros #form, .show1 #form, #edit #form, #commentList #form, #cursoList #form {
   margin: 0 auto;
   border: 1px solid #000;
   width: fit-content;
   box-shadow: 0 0 5px #000;
 }
-#listaLibros #form form, #userList #form form, .show1 #form form, #edit #form form, #commentList #form form, #cursoList #form form {
+#listaLibros #form form, .show1 #form form, #edit #form form, #commentList #form form, #cursoList #form form {
   margin: 1rem;
+  display: flex;
+  flex-direction: column;
+  width: 60%;
 }
-#listaLibros #form form #user, #listaLibros #form form #curso, #userList #form form #user, #userList #form form #curso, .show1 #form form #user, .show1 #form form #curso, #edit #form form #user, #edit #form form #curso, #commentList #form form #user, #commentList #form form #curso, #cursoList #form form #user, #cursoList #form form #curso {
+#listaLibros #form form div, .show1 #form form div, #edit #form form div, #commentList #form form div, #cursoList #form form div {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+#listaLibros #form form div #grupo_nombre, .show1 #form form div #grupo_nombre, #edit #form form div #grupo_nombre, #commentList #form form div #grupo_nombre, #cursoList #form form div #grupo_nombre {
+  width: 200px;
+}
+#listaLibros #form form div label, .show1 #form form div label, #edit #form form div label, #commentList #form form div label, #cursoList #form form div label {
+  width: 150px;
+}
+#listaLibros #form form div select, .show1 #form form div select, #edit #form form div select, #commentList #form form div select, #cursoList #form form div select {
+  width: 150px;
+}
+#listaLibros #form form #user, #listaLibros #form form #curso, .show1 #form form #user, .show1 #form form #curso, #edit #form form #user, #edit #form form #curso, #commentList #form form #user, #commentList #form form #curso, #cursoList #form form #user, #cursoList #form form #curso {
   display: flex;
   flex-direction: column;
 }
-#listaLibros div, #userList div, .show1 div, #edit div, #commentList div, #cursoList div {
+#listaLibros div, .show1 div, #edit div, #commentList div, #cursoList div {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
-#listaLibros button, #userList button, .show1 button, #edit button, #commentList button, #cursoList button {
+#listaLibros button, .show1 button, #edit button, #commentList button, #cursoList button {
   width: 5rem;
   background-color: white !important;
   border: 1px solid #f13906 !important;
@@ -767,20 +824,20 @@ form .btn {
   border-radius: 3px;
   height: 3rem;
 }
-#listaLibros button a, #userList button a, .show1 button a, #edit button a, #commentList button a, #cursoList button a {
+#listaLibros button a, .show1 button a, #edit button a, #commentList button a, #cursoList button a {
   color: black;
 }
-#listaLibros button a:hover, #userList button a:hover, .show1 button a:hover, #edit button a:hover, #commentList button a:hover, #cursoList button a:hover {
+#listaLibros button a:hover, .show1 button a:hover, #edit button a:hover, #commentList button a:hover, #cursoList button a:hover {
   color: #FFF;
   text-decoration: none;
   transition: 0.2s ease-out;
 }
-#listaLibros button:focus, #userList button:focus, .show1 button:focus, #edit button:focus, #commentList button:focus, #cursoList button:focus {
+#listaLibros button:focus, .show1 button:focus, #edit button:focus, #commentList button:focus, #cursoList button:focus {
   color: #f0eae8;
   outline: 0;
   box-shadow: 0 0 0 0.2rem #f13906 !important;
 }
-#listaLibros button::before, #listaLibros button::after, #userList button::before, #userList button::after, .show1 button::before, .show1 button::after, #edit button::before, #edit button::after, #commentList button::before, #commentList button::after, #cursoList button::before, #cursoList button::after {
+#listaLibros button::before, #listaLibros button::after, .show1 button::before, .show1 button::after, #edit button::before, #edit button::after, #commentList button::before, #commentList button::after, #cursoList button::before, #cursoList button::after {
   content: "";
   z-index: -1;
   position: absolute;
@@ -792,60 +849,203 @@ form .btn {
   /* color de fondo hover */
   transition: all 0.2s ease-out;
 }
-#listaLibros button:hover, #userList button:hover, .show1 button:hover, #edit button:hover, #commentList button:hover, #cursoList button:hover {
+#listaLibros button:hover, .show1 button:hover, #edit button:hover, #commentList button:hover, #cursoList button:hover {
   color: white;
 }
-#listaLibros button:hover::after, #userList button:hover::after, .show1 button:hover::after, #edit button:hover::after, #commentList button:hover::after, #cursoList button:hover::after {
+#listaLibros button:hover::after, .show1 button:hover::after, #edit button:hover::after, #commentList button:hover::after, #cursoList button:hover::after {
   left: 50%;
 }
-#listaLibros button:hover::before, #userList button:hover::before, .show1 button:hover::before, #edit button:hover::before, #commentList button:hover::before, #cursoList button:hover::before {
+#listaLibros button:hover::before, .show1 button:hover::before, #edit button:hover::before, #commentList button:hover::before, #cursoList button:hover::before {
   left: 0;
 }
-#listaLibros table tr td, #userList table tr td, .show1 table tr td, #edit table tr td, #commentList table tr td, #cursoList table tr td {
+#listaLibros table tr #baneado, .show1 table tr #baneado, #edit table tr #baneado, #commentList table tr #baneado, #cursoList table tr #baneado {
   font-family: "Press Start 2P", cursive;
-  color: #FFF;
+  color: red;
 }
-#listaLibros table tr td a, #userList table tr td a, .show1 table tr td a, #edit table tr td a, #commentList table tr td a, #cursoList table tr td a {
+#listaLibros table tr #baneado a, .show1 table tr #baneado a, #edit table tr #baneado a, #commentList table tr #baneado a, #cursoList table tr #baneado a {
   color: black;
 }
-#listaLibros table tr td a:hover, #userList table tr td a:hover, .show1 table tr td a:hover, #edit table tr td a:hover, #commentList table tr td a:hover, #cursoList table tr td a:hover {
+#listaLibros table tr #baneado a:hover, .show1 table tr #baneado a:hover, #edit table tr #baneado a:hover, #commentList table tr #baneado a:hover, #cursoList table tr #baneado a:hover {
   text-decoration: none;
   color: #f0eae8;
   transition: 0.2s ease-out;
 }
-#listaLibros table tr th, #userList table tr th, .show1 table tr th, #edit table tr th, #commentList table tr th, #cursoList table tr th {
+#listaLibros table tr td, .show1 table tr td, #edit table tr td, #commentList table tr td, #cursoList table tr td {
   font-family: "Press Start 2P", cursive;
   color: #FFF;
 }
-#listaLibros table tr:nth-child(even), #userList table tr:nth-child(even), .show1 table tr:nth-child(even), #edit table tr:nth-child(even), #commentList table tr:nth-child(even), #cursoList table tr:nth-child(even) {
+#listaLibros table tr td a, .show1 table tr td a, #edit table tr td a, #commentList table tr td a, #cursoList table tr td a {
+  color: black;
+}
+#listaLibros table tr td a:hover, .show1 table tr td a:hover, #edit table tr td a:hover, #commentList table tr td a:hover, #cursoList table tr td a:hover {
+  text-decoration: none;
+  color: #f0eae8;
+  transition: 0.2s ease-out;
+}
+#listaLibros table tr th, .show1 table tr th, #edit table tr th, #commentList table tr th, #cursoList table tr th {
+  font-family: "Press Start 2P", cursive;
+  color: #FFF;
+}
+#listaLibros table tr:nth-child(even), .show1 table tr:nth-child(even), #edit table tr:nth-child(even), #commentList table tr:nth-child(even), #cursoList table tr:nth-child(even) {
   background: #f13906;
 }
-#listaLibros table tr:nth-child(even) .eliminarbutton, #userList table tr:nth-child(even) .eliminarbutton, .show1 table tr:nth-child(even) .eliminarbutton, #edit table tr:nth-child(even) .eliminarbutton, #commentList table tr:nth-child(even) .eliminarbutton, #cursoList table tr:nth-child(even) .eliminarbutton {
+#listaLibros table tr:nth-child(even) .eliminarbutton, .show1 table tr:nth-child(even) .eliminarbutton, #edit table tr:nth-child(even) .eliminarbutton, #commentList table tr:nth-child(even) .eliminarbutton, #cursoList table tr:nth-child(even) .eliminarbutton {
   border: none !important;
   background-color: #f13906 !important;
   color: #000 !important;
 }
-#listaLibros table tr:nth-child(even) .eliminarbutton:hover, #userList table tr:nth-child(even) .eliminarbutton:hover, .show1 table tr:nth-child(even) .eliminarbutton:hover, #edit table tr:nth-child(even) .eliminarbutton:hover, #commentList table tr:nth-child(even) .eliminarbutton:hover, #cursoList table tr:nth-child(even) .eliminarbutton:hover {
+#listaLibros table tr:nth-child(even) .eliminarbutton:hover, .show1 table tr:nth-child(even) .eliminarbutton:hover, #edit table tr:nth-child(even) .eliminarbutton:hover, #commentList table tr:nth-child(even) .eliminarbutton:hover, #cursoList table tr:nth-child(even) .eliminarbutton:hover {
   color: white !important;
   transition: all 0.2s ease-out !important;
 }
-#listaLibros table tr:nth-child(even) a:hover, #userList table tr:nth-child(even) a:hover, .show1 table tr:nth-child(even) a:hover, #edit table tr:nth-child(even) a:hover, #commentList table tr:nth-child(even) a:hover, #cursoList table tr:nth-child(even) a:hover {
+#listaLibros table tr:nth-child(even) a:hover, .show1 table tr:nth-child(even) a:hover, #edit table tr:nth-child(even) a:hover, #commentList table tr:nth-child(even) a:hover, #cursoList table tr:nth-child(even) a:hover {
   color: #FFF;
 }
-#listaLibros table tr:nth-child(odd) .eliminarbutton, #userList table tr:nth-child(odd) .eliminarbutton, .show1 table tr:nth-child(odd) .eliminarbutton, #edit table tr:nth-child(odd) .eliminarbutton, #commentList table tr:nth-child(odd) .eliminarbutton, #cursoList table tr:nth-child(odd) .eliminarbutton {
+#listaLibros table tr:nth-child(odd) .eliminarbutton, .show1 table tr:nth-child(odd) .eliminarbutton, #edit table tr:nth-child(odd) .eliminarbutton, #commentList table tr:nth-child(odd) .eliminarbutton, #cursoList table tr:nth-child(odd) .eliminarbutton {
   border: none !important;
   color: #000 !important;
 }
-#listaLibros table tr:nth-child(odd) .eliminarbutton::before, #listaLibros table tr:nth-child(odd) .eliminarbutton::after, #userList table tr:nth-child(odd) .eliminarbutton::before, #userList table tr:nth-child(odd) .eliminarbutton::after, .show1 table tr:nth-child(odd) .eliminarbutton::before, .show1 table tr:nth-child(odd) .eliminarbutton::after, #edit table tr:nth-child(odd) .eliminarbutton::before, #edit table tr:nth-child(odd) .eliminarbutton::after, #commentList table tr:nth-child(odd) .eliminarbutton::before, #commentList table tr:nth-child(odd) .eliminarbutton::after, #cursoList table tr:nth-child(odd) .eliminarbutton::before, #cursoList table tr:nth-child(odd) .eliminarbutton::after {
+#listaLibros table tr:nth-child(odd) .eliminarbutton::before, #listaLibros table tr:nth-child(odd) .eliminarbutton::after, .show1 table tr:nth-child(odd) .eliminarbutton::before, .show1 table tr:nth-child(odd) .eliminarbutton::after, #edit table tr:nth-child(odd) .eliminarbutton::before, #edit table tr:nth-child(odd) .eliminarbutton::after, #commentList table tr:nth-child(odd) .eliminarbutton::before, #commentList table tr:nth-child(odd) .eliminarbutton::after, #cursoList table tr:nth-child(odd) .eliminarbutton::before, #cursoList table tr:nth-child(odd) .eliminarbutton::after {
   width: 0%;
 }
-#listaLibros table tr:nth-child(odd) .eliminarbutton:hover, #userList table tr:nth-child(odd) .eliminarbutton:hover, .show1 table tr:nth-child(odd) .eliminarbutton:hover, #edit table tr:nth-child(odd) .eliminarbutton:hover, #commentList table tr:nth-child(odd) .eliminarbutton:hover, #cursoList table tr:nth-child(odd) .eliminarbutton:hover {
+#listaLibros table tr:nth-child(odd) .eliminarbutton:hover, .show1 table tr:nth-child(odd) .eliminarbutton:hover, #edit table tr:nth-child(odd) .eliminarbutton:hover, #commentList table tr:nth-child(odd) .eliminarbutton:hover, #cursoList table tr:nth-child(odd) .eliminarbutton:hover {
   color: #f13906 !important;
   transition: all 0.2s ease-out !important;
   background-color: white !important;
 }
-#listaLibros table tr:nth-child(odd) .eliminarbutton:hover::after, #userList table tr:nth-child(odd) .eliminarbutton:hover::after, .show1 table tr:nth-child(odd) .eliminarbutton:hover::after, #edit table tr:nth-child(odd) .eliminarbutton:hover::after, #commentList table tr:nth-child(odd) .eliminarbutton:hover::after, #cursoList table tr:nth-child(odd) .eliminarbutton:hover::after {
+#listaLibros table tr:nth-child(odd) .eliminarbutton:hover::after, .show1 table tr:nth-child(odd) .eliminarbutton:hover::after, #edit table tr:nth-child(odd) .eliminarbutton:hover::after, #commentList table tr:nth-child(odd) .eliminarbutton:hover::after, #cursoList table tr:nth-child(odd) .eliminarbutton:hover::after {
   left: 0%;
+}
+
+#userList {
+  display: flex;
+  flex: 1 0 auto;
+  padding: 2.5rem 3.75rem 4rem;
+  flex-direction: column;
+  overflow: hidden;
+  text-align: center;
+}
+@media (max-width: 992px) {
+  #userList {
+    padding: 2rem 2.25rem 2.5rem;
+  }
+}
+@media (max-width: 768px) {
+  #userList {
+    padding: 1.5rem 2rem 2.5rem;
+  }
+}
+#userList h1 {
+  margin: 1rem 1rem 2.5rem;
+  font-size: 1.8rem;
+  color: #FFF;
+}
+#userList #form {
+  margin: 0 auto;
+  border: 1px solid #000;
+  width: fit-content;
+  box-shadow: 0 0 5px #000;
+}
+#userList #form form {
+  margin: 1rem;
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+}
+#userList #form form div {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+#userList #form form div #grupo_nombre {
+  width: 200px;
+}
+#userList #form form div label {
+  width: 150px;
+}
+#userList #form form div select {
+  width: 150px;
+}
+#userList #form form #user, #userList #form form #curso {
+  display: flex;
+  flex-direction: column;
+}
+#userList div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+#userList button {
+  width: 5rem;
+  background-color: white !important;
+  border: 1px solid #f13906 !important;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  display: inline-block;
+  color: #f0eae8;
+  border-radius: 3px;
+  height: 3rem;
+}
+#userList button a {
+  color: black;
+}
+#userList button a:hover {
+  color: #FFF;
+  text-decoration: none;
+  transition: 0.2s ease-out;
+}
+#userList button:focus {
+  color: #f0eae8;
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem #f13906 !important;
+}
+#userList button::before, #userList button::after {
+  content: "";
+  z-index: -1;
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  top: 0;
+  left: -50%;
+  background-color: #f13906 !important;
+  /* color de fondo hover */
+  transition: all 0.2s ease-out;
+}
+#userList button:hover {
+  color: white;
+}
+#userList button:hover::after {
+  left: 50%;
+}
+#userList button:hover::before {
+  left: 0;
+}
+#userList table tr #baneado {
+  color: red;
+}
+#userList table tr #baneado a {
+  color: black;
+}
+#userList table tr #baneado a:hover {
+  text-decoration: none;
+  color: #f0eae8;
+  transition: 0.2s ease-out;
+}
+#userList table tr td {
+  text-decoration: bald;
+  color: #FFF;
+}
+#userList table tr td a {
+  color: black;
+}
+#userList table tr td a:hover {
+  text-decoration: none;
+  color: #f0eae8;
+  transition: 0.2s ease-out;
+}
+#userList table tr th {
+  color: #FFF;
 }
 
 #nuevoLibro {

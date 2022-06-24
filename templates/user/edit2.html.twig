@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit User{% endblock %}
+
+{% block body %}
+{{ include('./admin/header.html.twig')}}
+    <section id = "edit">
+    <h1>Selecciona Tu Rango!<br> <img width = "50%"src="/img/VALORANT_ICONS_2.jpg"/></h1>
+    <div id = "form">
+    {{ include('user/_form.html.twig', {'button_label': 'Elegir'}) }}
+    </div>
+    <button>
+	<a href="{{ path('main') }}">Volver ↩</a>
+	</button>
+    </section>
+    {{ include('./admin/footer.html.twig')}}
+{% endblock %}
