@@ -26,8 +26,13 @@
                 display: flex;
                 flex-direction: column;
                 justify-content: space-between;
+                align-items: left;
                 & #grupo_nombre {
                     width: 200px;
+                }
+                & #reporte_Descripcion {
+                    width: 200px;
+                    height: 100px;
                 }
                 & label {
                     width: 150px;

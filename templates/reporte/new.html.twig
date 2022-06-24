@@ -3,9 +3,12 @@
 {% block title %}New Reporte{% endblock %}
 
 {% block body %}
-    <h1>Create new Reporte</h1>
-
+{{ include('./admin/header.html.twig')}}
+<section id = "edit">
+    <h1>Dínos la razón de tu reporte</h1>
+    <div id= "form">
     {{ include('reporte/_form.html.twig') }}
-
-    <a href="{{ path('app_reporte_index') }}">back to list</a>
+    </div>
+    </section>
+{{ include('./admin/footer.html.twig')}}
 {% endblock %}

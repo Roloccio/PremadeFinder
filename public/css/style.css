@@ -793,9 +793,14 @@ form .btn {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  align-items: left;
 }
 #listaLibros #form form div #grupo_nombre, .show1 #form form div #grupo_nombre, #edit #form form div #grupo_nombre, #commentList #form form div #grupo_nombre, #cursoList #form form div #grupo_nombre {
   width: 200px;
+}
+#listaLibros #form form div #reporte_Descripcion, .show1 #form form div #reporte_Descripcion, #edit #form form div #reporte_Descripcion, #commentList #form form div #reporte_Descripcion, #cursoList #form form div #reporte_Descripcion {
+  width: 200px;
+  height: 100px;
 }
 #listaLibros #form form div label, .show1 #form form div label, #edit #form form div label, #commentList #form form div label, #cursoList #form form div label {
   width: 150px;
